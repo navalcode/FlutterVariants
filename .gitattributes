@@ -1,0 +1,8 @@
+# Keep language statistics focused on application code.
+# Platform files remain visible in diffs and are not relabelled as Dart.
+flutter_flavors/android/** linguist-detectable=false
+flutter_flavors/ios/** linguist-detectable=false
+flutter_flavors/linux/** linguist-detectable=false
+flutter_flavors/macos/** linguist-detectable=false
+flutter_flavors/windows/** linguist-detectable=false
+flutter_flavors/web/** linguist-detectable=false
