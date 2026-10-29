@@ -1,20 +1,19 @@
 # Flutter Variants
 
-Ejemplo de aprendizaje para separar configuración y recursos de una aplicación Flutter por entorno.
+[Español](README.es.md)
 
-La aplicación está en [`flutter_flavors/`](flutter_flavors/). Incluye entradas de desarrollo y producción, una configuración compartida de nombre y tema, recursos por flavor y los flavors Android `dev` y `prod`.
+A Flutter configuration example with separate development and production entry points, shared app settings and flavor-specific assets. The application lives in [`flutter_flavors/`](flutter_flavors/).
 
-## Por dónde leerlo
+## Read the code
 
-- [`main_dev.dart`](flutter_flavors/lib/main_dev.dart) y [`main_prod.dart`](flutter_flavors/lib/main_prod.dart): puntos de entrada por entorno.
-- [`app_config.dart`](flutter_flavors/lib/config/app_config.dart): configuración compartida.
-- [`main.dart`](flutter_flavors/lib/main.dart): arranque con la configuración elegida.
-- [`pubspec.yaml`](flutter_flavors/pubspec.yaml): recursos comunes y específicos.
-- [`build.gradle`](flutter_flavors/android/app/build.gradle): flavors y nombres de la aplicación Android.
+- [`main_dev.dart`](flutter_flavors/lib/main_dev.dart) and [`main_prod.dart`](flutter_flavors/lib/main_prod.dart): environment entry points.
+- [`app_config.dart`](flutter_flavors/lib/config/app_config.dart): shared name and theme configuration.
+- [`pubspec.yaml`](flutter_flavors/pubspec.yaml): common and environment-specific assets.
+- [`build.gradle`](flutter_flavors/android/app/build.gradle): Android product flavors and app names.
 
-## Ejecutar el ejemplo Android
+## Run the Android example
 
-Desde la raíz del repositorio, con Flutter y Android SDK configurados:
+With Flutter and the Android SDK configured:
 
 ```sh
 cd flutter_flavors
@@ -23,6 +22,4 @@ flutter run --flavor dev --target lib/main_dev.dart
 flutter run --flavor prod --target lib/main_prod.dart
 ```
 
-Se revisaron los archivos y los nombres de los flavors para preparar esta guía. La ejecución con versiones actuales del toolchain queda pendiente de validación. La configuración de firma release necesita sus propios datos locales; estos comandos usan el modo debug predeterminado.
-
-El alcance es la configuración por entorno. No representa una aplicación publicada ni una arquitectura completa de producto.
+This earlier example retains its original toolchain. Entry points and flavor names have been inspected; execution with current Flutter versions remains unverified. Release signing requires separate local configuration. For a current Flutter application with tests and CI, see [Bitácora](https://github.com/navalcode/bitacora-flutter).
